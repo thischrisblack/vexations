@@ -1,0 +1,86 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+}
+
+
+.container {
+    display: grid;
+    grid-template-rows: 6rem 1fr  260px 100px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "header header"
+                        "info settings"
+                        "music music"
+                        "footer footer";
+    grid-column-gap: 0rem;
+    grid-row-gap: 0rem;
+    height: 100vh;
+}
+
+header {
+    grid-area: header;
+}
+
+.info {
+    grid-area: info;
+}
+
+.settings {
+    grid-area: settings;
+}
+
+.music {
+    /** THIS SHOULD HAVE BG IMAGE BLANK LINES **/
+    grid-area: music;
+    overflow: hidden;
+    position: relative;
+    background-image: url('./assets/blank-staff2.png');
+    background-repeat: repeat-x;
+    background-position: 50px 0;
+}
+
+.part {
+    width: 5712000px;
+    height: 100%;
+    position: absolute;
+    background-image: url('./assets/vexations3.png');
+    background-repeat: repeat-x;
+    top: 0;
+}
+
+.instructions {
+
+}
+
+.counter {
+
+}
+
+footer {
+    text-align: center;
+    grid-area: footer;
+    padding: 1rem;
+}
+
+#music1 {
+    position: absolute;
+    top: 0;
+}
+
+#music2 {
+    position: absolute;
+    top: 0;
+}
