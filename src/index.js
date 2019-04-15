@@ -8,14 +8,14 @@ let partMargin = screen.width / 2;
 
 let bpm = 46;
 
-let repetitions = 36;
+let repetitions = 840;
 
 /**
  * Find performance duration in seconds
  * 52 = total beats in one repetition
  * 840 = number of repetitions
  */
-let performanceDuration = 52 * repetitions / bpm * 60;
+let performanceDuration = 52 * repetitions / bpm * 60 * 1000;
 
 // Part div width in px
 let partWidth = 6800 * repetitions;
@@ -26,13 +26,14 @@ let scrollSpeed = partWidth / performanceDuration;
 var start = null;
 part.style.left = partMargin + 'px';
 part.style.width = partWidth + 'px';
+document.getElementById('timer').innerHTML = msToTime(performanceDuration + 1000);
 
 function scroll(timestamp) {
     if (!start) start = timestamp;
     var progress = timestamp - start;
-    var timeRemaining = msToTime((performanceDuration * 1000) - progress + 1000);
-    var repsCompleted = Math.floor(progress / (performanceDuration / repetitions * 1000));
-    part.style.transform = 'translateX(-' + (progress / (1000 / scrollSpeed)) + 'px)';
+    var timeRemaining = msToTime((performanceDuration) - progress + 1000);
+    var repsCompleted = Math.floor(progress / (performanceDuration / repetitions));
+    part.style.transform = 'translateX(-' + (progress / (1 / scrollSpeed)) + 'px)';
     document.getElementById('timer').innerHTML = timeRemaining;
     document.getElementById('counter').innerHTML = repsCompleted;
     if (playing && repsCompleted < repetitions) {
@@ -64,3 +65,12 @@ window.addEventListener('keyup', e => {
         console.log(playing);
     }
 });
+
+var slider = document.getElementById('tempo');
+var tempoIndicator = document.getElementById('bpm');
+tempoIndicator.innerHTML = slider.value;
+
+slider.oninput = function() {
+    tempoIndicator.innerHTML = this.value;
+    // Send to model / view funtions.
+}

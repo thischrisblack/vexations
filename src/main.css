@@ -14,6 +14,7 @@ html {
 body {
     font-size: 1.8rem;
     line-height: 2.2rem;
+    position: relative;
 }
 
 
@@ -84,12 +85,16 @@ footer {
     padding: 1rem;
 }
 
-#music1 {
+.viewfinder {
     position: absolute;
-    top: 0;
-}
-
-#music2 {
-    position: absolute;
-    top: 0;
+    width: 4px;
+    height: 90%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: black;
+    opacity: .10;
+    border-radius: 0%;
 }
