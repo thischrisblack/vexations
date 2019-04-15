@@ -59,6 +59,15 @@ header {
     background-image: url('./assets/vexations3.png');
     background-repeat: repeat-x;
     top: 0;
+    display: inline-block;
+}
+
+.part:after {
+    content: "FINISHED";
+    position: absolute;
+    font-size: 72px;
+    right: -450px;
+    top: 130px;
 }
 
 .instructions {
