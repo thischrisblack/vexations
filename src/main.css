@@ -88,7 +88,7 @@ footer {
 .viewfinder {
     position: absolute;
     width: 4px;
-    height: 90%;
+    height: 100%;
     bottom: 0;
     left: 0;
     right: 0;
@@ -96,5 +96,5 @@ footer {
     margin-right: auto;
     background-color: black;
     opacity: .10;
-    border-radius: 0%;
+    border-radius: 10%;
 }
