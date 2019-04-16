@@ -57,7 +57,7 @@ header {
     width: 5712000px;
     height: 100%;
     position: absolute;
-    background-image: url('./assets/vexations3.png');
+    background-image: url('./assets/vexations4.png');
     background-repeat: repeat-x;
     top: 0;
     display: inline-block;
@@ -97,4 +97,11 @@ footer {
     background-color: black;
     opacity: .10;
     border-radius: 10%;
+}
+
+.rep-number {
+    display: inline-block;
+    width: 6800px;
+    font-size: 42px;
+    margin-top: 5px;
 }
