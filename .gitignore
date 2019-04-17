@@ -74,8 +74,4 @@ typings/
 
 # FuseBox cache
 .fusebox/
-dist/1edfa6e023aa3538e5b1f8914d79f270.png
-dist/a7c20d626c1812c7b25861d23d935f47.png
-dist/index.html
-dist/main.css
-dist/main.js
+dist/

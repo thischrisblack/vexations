@@ -3,7 +3,7 @@ import performance from './components/performance';
 import ui from './components/ui';
 import music from './components/music';
 import vexate from './components/vexate';
-import numberer from './components/numberer';
+import paginator from './components/paginator';
 import play from './components/play';
 
 // Animation properties
@@ -14,7 +14,7 @@ import play from './components/play';
 
     ui.update(performance);
 
-    // numberer(performance);
+    paginator(performance);
 
     ui.slider.oninput = function() {
         performance.tempo = ui.slider.value;
