@@ -1,5 +1,6 @@
 var start;
 var play;
+// Animation control for the sheet music.
 export default function vexate(performance, music, ui) {
     play = window.requestAnimationFrame(scroll);
     function scroll(timestamp) {
@@ -13,6 +14,7 @@ export default function vexate(performance, music, ui) {
         if (performance.playing && repsCompleted < performance.repetitions) {
             window.requestAnimationFrame(scroll);
         } else {
+            // If stop button clicked, or performance repetitions exceed goal, stop.
             start = null;
             window.cancelAnimationFrame(play);
         }

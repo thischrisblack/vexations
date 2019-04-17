@@ -1,3 +1,7 @@
+/*******************************************************************************
+General
+********************************************************************************/
+
 *,
 *::before,
 *::after {
@@ -33,6 +37,11 @@ body {
     color: #222;
 }
 
+body a:link, a:visited {
+    font-weight: 400;
+    color: #000;
+}
+
 .container {
     display: grid;
     grid-template-rows: 12rem 1fr 260px 4rem;
@@ -45,6 +54,10 @@ body {
     grid-row-gap: 2rem;
     height: 100vh;
 }
+
+/*******************************************************************************
+Header
+********************************************************************************/
 
 header {
     grid-area: header;
@@ -61,6 +74,10 @@ header h1 {
     line-height: 10rem;
     letter-spacing: 6rem;
 }
+
+/*******************************************************************************
+Left "info" section
+********************************************************************************/
 
 .info {
     display: flex;
@@ -88,15 +105,6 @@ header h1 {
     padding: 2rem;
 }
 
-#play {
-    text-transform: uppercase;
-    font-size: 4.5rem;
-    font-weight: 700;
-    cursor: pointer;
-    border-radius: 10px;
-    transition: all .25s;
-}
-
 .instructions {
     color: #555;
     font-size: 1.8rem;
@@ -104,10 +112,9 @@ header h1 {
     font-weight: 400;
 }
 
-.instructions a:link, a:visited {
-    font-weight: 400;
-    color: #000;
-}
+/*******************************************************************************
+Right "settings" section
+********************************************************************************/
 
 .settings {
     display: flex;
@@ -173,8 +180,20 @@ header h1 {
     font-size: 3rem;
 }
 
+#play {
+    text-transform: uppercase;
+    font-size: 4.5rem;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all .25s;
+}
+
+/*******************************************************************************
+Bottom "music" section
+********************************************************************************/
+
 .music {
-    /** THIS SHOULD HAVE BG IMAGE BLANK LINES **/
     grid-area: music;
     overflow: hidden;
     position: relative;
@@ -199,15 +218,6 @@ header h1 {
     top: 137px;
 }
 
-footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    text-align: center;
-    grid-area: footer;
-    padding: 1rem;
-}
-
 .viewfinder {
     position: absolute;
     width: 4px;
@@ -223,7 +233,19 @@ footer {
 }
 
 /*******************************************************************************
-Slider modified from 
+Footer (if any)
+********************************************************************************/
+
+footer {
+    grid-area: footer;
+    padding: 1rem;
+    font-size: 1.4rem;
+    color: #777;
+    text-align: right;
+}
+
+/*******************************************************************************
+Range slider styles modified from 
 https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/
 ********************************************************************************/
 

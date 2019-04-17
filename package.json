@@ -2,7 +2,7 @@
   "name": "vexations",
   "version": "1.0.0",
   "description": "Play Erik Satie's Vexations 840 times in a row, as he wished.",
-  "author": "Chris Black",
+  "author": "Chris Black <black@chrisblack.net>",
   "license": "MIT",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

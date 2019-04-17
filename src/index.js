@@ -4,58 +4,51 @@ import ui from './components/ui';
 import music from './components/music';
 import vexate from './components/vexate';
 import paginator from './components/paginator';
-import play from './components/play';
-
-// Animation properties
+import playButton from './components/play';
 
 (function init() {
 
+    // Sets the .part div in the .music div, with proper width.
     music.place(performance.repetitions);
 
+    // Update UI with initial performance settings
     ui.update(performance);
 
+    // Append correct number of sheet music images (default 840)
     paginator(performance);
 
+    // Listen for tempo change event.
     ui.slider.oninput = function() {
         performance.tempo = ui.slider.value;
         ui.update(performance);
     }
 
+    // Counter for play button clicks
     var clicked = 0;
 
-    play(clicked);
+    // Update playbutton text
+    playButton(clicked);
 
+    // Listen for play button events
     ui.playButton.addEventListener('click', e => {
+
+        // Third click is a reset.
         if (clicked >= 2) {                
             location.reload(false);
         } else {
             clicked++;
+
+            // Update UI elements
             ui.counterDiv.style.opacity = 1;
-            play(clicked);
+            playButton(clicked);
             ui.slider.disabled = true;
+
+            // Handle animation
             performance.playing = !performance.playing;
             if (performance.playing) {     
                 vexate(performance, music, ui);
             }
         }
-
-        // // If click is not on tempo slider
-        // if (!e.target.closest('#tempo-slider')) {
-        //     if (clicked >= 2) {                
-        //         location.reload(false);
-        //     } else {
-        //         clicked++;
-                // ui.counterDiv.style.opacity = 1;
-        //         play(clicked);
-        //         ui.slider.disabled = true;
-        //         performance.playing = !performance.playing;
-        //         if (performance.playing) {     
-        //             vexate(performance, music, ui);
-        //         }
-        //     }
-
-            
-        // }
     });
 
 })();
