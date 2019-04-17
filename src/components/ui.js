@@ -5,6 +5,8 @@ export default ui = {
     slider: document.getElementById('tempo-slider'),
     timer: document.getElementById('timer'),
     counter: document.getElementById('counter'),
+    counterDiv: document.querySelector('.counter'),
+    playButton: document.getElementById('play'),
     update: function(performance, completed = 0, progress = 0) {
         this.tempo.innerHTML = performance.tempo;
         this.slider.value = performance.tempo;
