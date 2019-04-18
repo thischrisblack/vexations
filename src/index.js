@@ -8,6 +8,8 @@ import playButton from './components/play';
 
 (function init() {
 
+    console.log(window.devicePixelRatio);
+
     // Sets the .part div in the .music div, with proper width.
     music.place(performance.repetitions);
 

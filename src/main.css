@@ -27,6 +27,16 @@ html {
     }
 }
 
+/*******************************************************************************
+Digital Pixel Resolution
+********************************************************************************/
+
+@media (min-resolution: 130dpi) and (max-resolution: 150dpi) and (width: 1280px) {
+    html {
+        font-size: 40%;
+    }
+}
+
 body {
     /* font-family: 'Nanum Myeongjo', serif; */
     font-family: 'Frank Ruhl Libre', serif;
@@ -190,6 +200,16 @@ Right "settings" section
 }
 
 /*******************************************************************************
+Digital Pixel Resolution
+********************************************************************************/
+
+@media (min-resolution: 130dpi) and (max-resolution: 150dpi) and (width: 1280px) {
+    .counter {
+        margin: 2rem 0;
+    }
+}
+
+/*******************************************************************************
 Bottom "music" section
 ********************************************************************************/
 
@@ -340,3 +360,5 @@ input[type=range]:focus::-ms-fill-lower {
 input[type=range]:focus::-ms-fill-upper {
     background: #888;
 }
+
+
