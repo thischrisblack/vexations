@@ -4,6 +4,6 @@ Erik Satie wrote a piano piece called "[Vexations](https://en.wikipedia.org/wiki
 
 Put your computer or tablet on your piano, select the tempo, hit BEGIN, and off you go. Good luck!
 
-This app is live [here](https://thischrisblack.github.io/vexations/)
+This app is live [here](https://thischrisblack.github.io/vexations/).
 
 ![Vexations](./src/assets/screenshot.JPG)
