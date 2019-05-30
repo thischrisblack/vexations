@@ -27,16 +27,6 @@ html {
     }
 }
 
-/*******************************************************************************
-Device Pixel Ratio
-********************************************************************************/
-
-@media (min-resolution: 130dpi) and (max-resolution: 150dpi) and (width: 1280px) {
-    html {
-        font-size: 40%;
-    }
-}
-
 body {
     /* font-family: 'Nanum Myeongjo', serif; */
     font-family: 'Frank Ruhl Libre', serif;
@@ -200,16 +190,6 @@ Right "settings" section
 }
 
 /*******************************************************************************
-Digital Pixel Resolution
-********************************************************************************/
-
-@media (min-resolution: 130dpi) and (max-resolution: 150dpi) and (width: 1280px) {
-    .counter {
-        margin: 2rem 0;
-    }
-}
-
-/*******************************************************************************
 Bottom "music" section
 ********************************************************************************/
 
@@ -217,7 +197,7 @@ Bottom "music" section
     grid-area: music;
     overflow: hidden;
     position: relative;
-    background-image: url('./assets/blank-staff2.png');
+    background-image: url(1edfa6e023aa3538e5b1f8914d79f270.png);
     background-repeat: repeat-x;
     background-position: 50px 0;
 }
@@ -361,4 +341,16 @@ input[type=range]:focus::-ms-fill-upper {
     background: #888;
 }
 
+/*******************************************************************************
+Digital Pixel Resolution
+********************************************************************************/
+
+@media (min-resolution: 130dpi) and (max-resolution: 150dpi) and (width: 1280px) {
+    html {
+        font-size: 40%;
+    }
+    .counter {
+        margin: 2rem 0;
+    }
+  }
 
