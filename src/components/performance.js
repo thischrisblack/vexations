@@ -1,22 +1,25 @@
-let performance;
-// Performance settings, including tempo (set by user) and default repetition number (840).
+// Performance settings.
 export default performance = {
     playing: false,
     repetitions: 840,
-    tempo: 46,
-    duration: function() {
-        return 52 * this.repetitions / this.tempo * 60 * 1000
+    tempo: 46, // Beats per minute.
+    duration: 0,
+    scrollSpeed: 0,
+    getDuration: function () {
+        // Returns total duration in ms.
+        // The piece has 52 beats.
+        return ((52 * this.repetitions) / this.tempo) * 60 * 1000;
     },
-    // Return human-readable time string.
-    timeString: function(time) {
-        var seconds = parseInt((time/1000)%60)
-            , minutes = parseInt((time/(1000*60))%60)
-            , hours = parseInt((time/(1000*60*60))%24)
-            , days = parseInt((time/(1000*60*60))/24);
-        var dateString = hours + ' hour' + (hours !== 1 ? 's' : '') + ', ' + 
-                         minutes + ' minute' + (minutes !== 1 ? 's' : '') + ', ' + 
-                         seconds + ' seconds.';
-        if (days) dateString = days + ' day' + (days !== 1 ? 's' : '') + ', ' + dateString;
-        return dateString;               
-    }
-}
+    getTimeRemaining: function (time) {
+        const seconds = parseInt((time / 1000) % 60);
+        const minutes = parseInt((time / (1000 * 60)) % 60);
+        const hours = parseInt((time / (1000 * 60 * 60)) % 24);
+        const days = parseInt(time / (1000 * 60 * 60) / 24);
+        let dateString =
+            `${days ? `${days} day${days !== 1 ? 's' : ''}, ` : ''}` +
+            `${hours} hour${hours !== 1 ? 's' : ''}, ` +
+            `${minutes} minute${minutes !== 1 ? 's' : ''}, ` +
+            `${seconds} second${seconds !== 1 ? 's' : ''}`;
+        return dateString;
+    },
+};

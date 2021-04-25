@@ -1,17 +1,14 @@
-import style from "./main.css";
+import style from './main.css';
 import performance from './components/performance';
 import ui from './components/ui';
 import music from './components/music';
 import vexate from './components/vexate';
 import paginator from './components/paginator';
-import playButton from './components/play';
+import setPlayButtonText from './components/set-play-button-text';
 
 (function init() {
-
-    console.log(window.devicePixelRatio);
-
-    // Sets the .part div in the .music div, with proper width.
-    music.place(performance.repetitions);
+    // Sets the placement and width of the part div.
+    music.init(performance.repetitions);
 
     // Update UI with initial performance settings
     ui.update(performance);
@@ -20,37 +17,37 @@ import playButton from './components/play';
     paginator(performance);
 
     // Listen for tempo change event.
-    ui.slider.oninput = function() {
+    ui.slider.oninput = () => {
         performance.tempo = ui.slider.value;
         ui.update(performance);
-    }
+    };
 
     // Counter for play button clicks
-    var clicked = 0;
+    let timesClicked = 0;
 
     // Update playbutton text
-    playButton(clicked);
+    setPlayButtonText(timesClicked);
 
     // Listen for play button events
-    ui.playButton.addEventListener('click', e => {
-
+    ui.playButton.addEventListener('click', () => {
         // Third click is a reset.
-        if (clicked >= 2) {                
-            location.reload(false);
+        if (timesClicked >= 2) {
+            location.reload();
         } else {
-            clicked++;
+            timesClicked++;
 
             // Update UI elements
-            ui.counterDiv.style.opacity = 1;
-            playButton(clicked);
+            ui.counterContainer.style.opacity = 1;
+            setPlayButtonText(timesClicked);
             ui.slider.disabled = true;
 
-            // Handle animation
+            // Start animation
             performance.playing = !performance.playing;
-            if (performance.playing) {     
+            if (performance.playing) {
+                performance.duration = performance.getDuration();
+                performance.scrollSpeed = (6800 * performance.repetitions) / performance.duration;
                 vexate(performance, music, ui);
             }
         }
     });
-
 })();

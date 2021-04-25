@@ -1,81 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo:400,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre:400,700" rel="stylesheet">
-    <title>VEXATIONS</title>
-</head>
-<body>
-    <div class="container">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo:400,700" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre:400,700" rel="stylesheet" />
+        <title>VEXATIONS</title>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1>VEXATIONS</h1>
+            </header>
 
-        <header>
-            <h1>VEXATIONS</h1>   
-        </header>
-
-        <div class="info">
-
-            <div class="satie__quote">
-                &quot;In order to play the theme 840 times in succession, it would be advisable to prepare oneself beforehand, and in the deepest silence, by serious immobilities.&quot; <span class="satie__attribution">&mdash; Erik Satie</span>
-            </div>
-
-            <div class="instructions">
-
-                <p>
-                    There is no sound. You are the sound. For practice, find full music <a href="https://en.wikipedia.org/wiki/Vexations#/media/File:Vexations_erik_satie_piano_sheet.jpeg" target="_blank">here</a>.
-                </p>
-
-            </div>  
-
-        </div>
-
-        <div class="settings">
-            
-            <div class="tempo">
-
-                <div id="tempo"></div>
-
-                <div class="slider">
-                    <input type="range" min="1" max="120" id="tempo-slider">
+            <div class="info">
+                <div class="satie__quote">
+                    &quot;In order to play the theme 840 times in succession, it would be advisable to prepare oneself
+                    beforehand, and in the deepest silence, by serious immobilities.&quot;
+                    <span class="satie__attribution">&mdash; Erik Satie</span>
                 </div>
 
-            </div>
-            
-            
-            <div class="timer">
-
-                <p>TIME TO COMPLETION</p>
-                <div id="timer"></div>
-
-            </div>
-
-            <div class="counter">
-
-                <p><span id="counter"></span> PLAYS COMPLETED</p>
-                <div id="counter"></div>
-
+                <div class="instructions">
+                    <p>
+                        There is no sound. You are the sound. For practice, find full music
+                        <a
+                            href="https://en.wikipedia.org/wiki/Vexations#/media/File:Vexations_erik_satie_piano_sheet.jpeg"
+                            target="_blank"
+                            >here</a
+                        >.
+                    </p>
+                </div>
             </div>
 
-            <div ID="play"></div>
-            
+            <div class="settings">
+                <div class="tempo">
+                    <div id="tempo"></div>
+
+                    <div class="slider">
+                        <input type="range" min="1" max="120" id="tempo-slider" />
+                    </div>
+                </div>
+
+                <div class="timer">
+                    <p>TIME TO COMPLETION</p>
+                    <div id="timer"></div>
+                </div>
+
+                <div class="counter-container">
+                    <p><span id="counter"></span> PLAYS COMPLETED</p>
+                </div>
+
+                <div id="play"></div>
+            </div>
+
+            <div class="music">
+                <div class="part"></div>
+
+                <div class="viewfinder"></div>
+            </div>
+
+            <footer>
+                Code by Chris Black. View on <a href="https://github.com/thischrisblack/vexations">Github</a>.
+            </footer>
         </div>
-
-        <div class="music">
-
-            <div class="part"></div>
-
-            <div class="viewfinder"></div>
-
-        </div>
-
-        <footer>
-            Code by Chris Black. View on <a href="https://github.com/thischrisblack/vexations">Github</a>.
-        </footer>
-
-    </div>
-
-</body>
-
+    </body>
 </html>
